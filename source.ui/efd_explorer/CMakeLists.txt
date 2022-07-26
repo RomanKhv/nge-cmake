@@ -1,14 +1,17 @@
-﻿cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.20)
+
+set (PROJECT_NAME efd_explorer)
+
+project ( ${PROJECT_NAME} )
 
 # Add source to this project's executable.
-add_executable (efd_explorer "efd_explorer.cpp" "efd_explorer.h")
+add_executable ( ${PROJECT_NAME} "efd_explorer.cpp" )
 
-target_include_directories( efd_explorer
+target_include_directories( ${PROJECT_NAME}
 	PUBLIC
 	"${PROJECT_SOURCE_DIR}/source.basic/utils/include"
 )
 
-# TODO: Add tests and install targets if needed.
-target_link_libraries( efd_explorer
+target_link_libraries( ${PROJECT_NAME}
 	PUBLIC
 )

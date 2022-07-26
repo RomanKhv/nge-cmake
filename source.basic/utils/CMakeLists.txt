@@ -1,9 +1,11 @@
-﻿cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.20)
 
-set (TRG_NAME utils)
+set (PROJECT_NAME utils)
+
+project ( ${PROJECT_NAME} )
 
 # Add source to this project's executable.
-add_library( ${TRG_NAME} STATIC "src/utils.cpp" )
-target_include_directories( ${TRG_NAME} PUBLIC "include" )
+add_library( ${PROJECT_NAME} STATIC "src/utils.cpp" )
+target_include_directories( ${PROJECT_NAME} PUBLIC "include" )
 
 # TODO: Add tests and install targets if needed.
