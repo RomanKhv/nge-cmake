@@ -4,4 +4,5 @@ project ("nge")
 
 # Include sub-projects.
 add_subdirectory ("source.basic/utils")
+add_subdirectory ("source.slv")
 add_subdirectory ("source.ui/efd_explorer")

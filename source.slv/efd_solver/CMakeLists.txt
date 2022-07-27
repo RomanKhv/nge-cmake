@@ -1,6 +1,12 @@
-﻿cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.20)
+
+set (PROJECT_NAME efd_solver)
+project ( ${PROJECT_NAME} )
 
 # Add source to this project's executable.
-add_executable (efd_solver "efd_solver.cpp" "efd_solver.h")
+add_executable ( ${PROJECT_NAME} "efd_solver.cpp" )
 
-# TODO: Add tests and install targets if needed.
+target_link_libraries( ${PROJECT_NAME}
+	PRIVATE
+		utils
+)
