@@ -21,6 +21,7 @@ mono_crash.*
 
 # Build results
 build/
+idl_i/
 graphviz/
 [Dd]ebug/
 [Dd]ebugPublic/

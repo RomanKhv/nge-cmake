@@ -10,13 +10,20 @@ endif()
 
 project ("nge" CXX)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/x64/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/x64/lib)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/x64/lib)
-set(CMAKE_PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/x64/pdb)
+if(NOT ${CMAKE_SIZEOF_VOID_P} EQUAL 4)
+    set(_PLATFORM_X64 TRUE)
+    set(_PLATFORM_DIR x64)
+else()
+    set(_PLATFORM_DIR x32)
+endif()
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/lib)
+set(CMAKE_PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/pdb)
 
 # Include sub-projects.
 add_subdirectory ("source.basic/utils")
 add_subdirectory ("source.slv")
 add_subdirectory ("source.ui")
-add_subdirectory ("myidl")
+add_subdirectory ("source.x")

@@ -16,4 +16,4 @@ source.ui/prop_man  <-  source.ui/efd_explorer.
 source.ui/gui_res  <-  source.ui/efd_explorer.
 
 ### IDL compilation:
-source.ui/com_api.
+source.x/idl.
