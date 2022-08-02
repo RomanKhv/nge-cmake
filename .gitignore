@@ -12,6 +12,7 @@
 *.userosscache
 *.sln.docstates
 CMakeCache.txt
+cmake_all_vars_snapshot.txt
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
