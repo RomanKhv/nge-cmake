@@ -14,10 +14,15 @@ add_library( ${PROJECT_NAME} SHARED
 
 target_include_directories( ${PROJECT_NAME}
     PUBLIC
-        "../../include"
+        "include"
 )
 
 target_compile_definitions( ${PROJECT_NAME}
     PRIVATE
-        PMGUIWIN_EXPORTS
+        PMGUI_EXPORTS
+)
+
+target_include_directories( ${PROJECT_NAME}
+	PUBLIC
+        ../../include
 )

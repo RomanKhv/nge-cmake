@@ -12,13 +12,41 @@ add_library( ${PROJECT_NAME} SHARED
     "PMPage.cpp"
 )
 
+add_library(
+    mfc_res 
+    MODULE
+    "pm_gui_mfc.rc"
+)
+
+set_property(
+    TARGET 
+    mfc_res 
+    PROPERTY 
+    LINK_OPTIONS 
+    "/NOENTRY" "/IMPLIB:NONE" #"/PDB:" "/DEBUG:NONE"
+)
+
+set_property(
+    TARGET
+    mfc_res
+    PROPERTY
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}"
+)
+
+#set_target_properties(mfc_res PROPERTIES LINK_OPTIONS "/NOENTRY")
+
 target_include_directories( ${PROJECT_NAME}
     PUBLIC
-        "../../include"
+        "include"
 )
 
 target_compile_definitions( ${PROJECT_NAME}
     PRIVATE
-        PMGUIMFC_EXPORTS
+        PMGUI_EXPORTS
         _AFXDLL
+)
+
+target_include_directories( ${PROJECT_NAME}
+	PUBLIC
+        ../../include
 )
