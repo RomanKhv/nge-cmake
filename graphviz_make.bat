@@ -1,4 +1,4 @@
-mkdir ./graphviz
+mkdir graphviz
 cd graphviz
 
 cmake -S .. -B ../build --graphviz=nge.dot

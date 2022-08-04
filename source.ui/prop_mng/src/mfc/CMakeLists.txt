@@ -22,3 +22,7 @@ target_compile_definitions( ${PROJECT_NAME}
         PMGUIMFC_EXPORTS
         _AFXDLL
 )
+
+set_target_properties( ${PROJECT_NAME} PROPERTIES
+    FOLDER source.ui/pm_gui
+)

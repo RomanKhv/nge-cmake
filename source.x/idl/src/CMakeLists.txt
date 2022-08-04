@@ -30,14 +30,32 @@ add_custom_command(
 set(FINDIDL_TARGET ${PROJECT_NAME}_gen)
 add_custom_target(${FINDIDL_TARGET} DEPENDS ${MIDL_OUTPUT} SOURCES ${IDLFILE})
 
+set_target_properties(${FINDIDL_TARGET} PROPERTIES
+    FOLDER source.x/idl
+)
+
+######################################################################
+
 add_library(${PROJECT_NAME} INTERFACE)
 add_dependencies(${PROJECT_NAME} ${FINDIDL_TARGET})
 target_include_directories(${PROJECT_NAME} INTERFACE ${MIDL_OUTPUT_PATH})
 
-file(GLOB src "*.h" "*.cpp" "*.def" "*.rc" "*.rgs")
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    FOLDER source.x/idl
+)
+
+######################################################################
+
+file(GLOB src "*.h" "*.cpp" "*.def" "*.rc" "*.rgs") # default for sources without specified group: "Header Files"+"Source Files"
+source_group(res FILES "resource.h" "Greeter.rc")   # custom folder for specific files
+source_group("" FILES "dllmain.cpp" "Greeter.cpp")  # no folder
 
 add_library(GreeterLib SHARED ${src})
 target_link_libraries(GreeterLib ${PROJECT_NAME})
+
+set_target_properties(GreeterLib PROPERTIES
+    FOLDER source.x/idl
+)
 
 
 if(MSVC)

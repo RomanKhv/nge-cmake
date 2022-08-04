@@ -25,6 +25,8 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/lib)
 set(CMAKE_PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/pdb)
 
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 # need find appropriate CMake variable?
 # include(PrintAllVariables)
 # print_all_variables_to_file()

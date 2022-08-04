@@ -21,3 +21,7 @@ target_compile_definitions( ${PROJECT_NAME}
     PRIVATE
         PMGUIWIN_EXPORTS
 )
+
+set_target_properties( ${PROJECT_NAME} PROPERTIES
+    FOLDER source.ui/pm_gui
+)

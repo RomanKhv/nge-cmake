@@ -16,4 +16,28 @@ source.ui/prop_man  <-  source.ui/efd_explorer.
 source.ui/gui_res  <-  source.ui/efd_explorer.
 
 ### IDL compilation:
-source.x/idl.
+source.x/idl
+
+### "Configurations"
+TODO: custom configurations
+TODO: specific settings (defines, linked libs) for every configuration
+
+### Delayload
+TODO
+
+### Custom PCH
+TODO: use my pch.h
+
+### C++20 modules
+TODO
+
+### C++20 header units
+TODO
+
+### VS project/file grouping
+- set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+- set_target_properties( <prj_name> PROPERTIES FOLDER <folder> )
+- source_group( <folder_name> FILES <src> )
+
+### Dependency analysis
+See graphvis_make.bat

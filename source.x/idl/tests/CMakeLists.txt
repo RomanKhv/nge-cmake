@@ -10,6 +10,10 @@ add_executable(${PROJECT_NAME}
 )
 target_link_libraries(${PROJECT_NAME} comapi)
 
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    FOLDER source.x/idl
+)
+
 add_custom_command(
     TARGET ${PROJECT_NAME}
     PRE_BUILD
