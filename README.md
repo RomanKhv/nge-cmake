@@ -14,6 +14,7 @@ source.ui/prop_man  <-  source.ui/efd_explorer.
 
 ### Win res dll:
 source.ui/gui_res  <-  source.ui/efd_explorer.
+Use corresponding INTERFACE library to add resource.h folder.
 
 ### IDL compilation:
 source.x/idl
