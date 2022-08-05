@@ -25,6 +25,9 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/lib)
 set(CMAKE_PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/pdb)
 
+include(include_cmn_libs)
+include(PrintTargetProperties)
+
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # need find appropriate CMake variable?
@@ -32,7 +35,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # print_all_variables_to_file()
 
 # Include sub-projects.
-add_subdirectory ("source.basic/utils")
+add_subdirectory ("source.basic")
 add_subdirectory ("source.slv")
 add_subdirectory ("source.ui")
 add_subdirectory ("source.x")

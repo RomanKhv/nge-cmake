@@ -21,6 +21,7 @@ cmake_all_vars_snapshot.txt
 mono_crash.*
 
 # Build results
+third_party/
 build/
 idl_i/
 graphviz/
