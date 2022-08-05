@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.20)
 
 # Get all propreties that cmake supports
 if(NOT CMAKE_PROPERTY_LIST)

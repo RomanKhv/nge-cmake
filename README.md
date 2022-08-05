@@ -12,6 +12,10 @@ source.slv/viewer  <-  source.ui/efd_explorer.
 ### Platform-dependent polymorphic features:
 source.ui/prop_man  <-  source.ui/efd_explorer.
 
+### External lib dependencies (boost, ...)
+See include_cmn_libs.cmake
+source.basic/third_party_usage
+
 ### Win res dll:
 source.ui/gui_res  <-  source.ui/efd_explorer.
 Use corresponding INTERFACE library to add resource.h folder.
