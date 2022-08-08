@@ -1,6 +1,7 @@
 ﻿###   efd_explorer   ###
 cmake_minimum_required (VERSION 3.20)
 set (PROJECT_NAME efd_explorer)
+set (USE_MFC ON)
 
 project ( ${PROJECT_NAME} CXX )
 
@@ -12,7 +13,18 @@ add_executable ( ${PROJECT_NAME}
 target_link_libraries( ${PROJECT_NAME}
 	PRIVATE
 		utils
-		pm_gui_win
-		pm_gui_mfc
+		feature_gui
 		gui_res_headers
 )
+
+if (USE_MFC)
+	target_link_libraries( ${PROJECT_NAME}
+	PRIVATE
+		pm_gui_mfc
+	)
+else()
+	target_link_libraries( ${PROJECT_NAME}
+	PRIVATE
+		pm_gui_win
+	)
+endif()

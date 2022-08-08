@@ -12,14 +12,14 @@ add_library( ${PROJECT_NAME} SHARED
     "PMPage.cpp"
 )
 
-target_include_directories( ${PROJECT_NAME}
+target_link_libraries( ${PROJECT_NAME}
     PUBLIC
-        "../../include"
+    pm_gui_interface
 )
 
 target_compile_definitions( ${PROJECT_NAME}
     PRIVATE
-        PMGUIMFC_EXPORTS
+        PMGUI_EXPORTS
         _AFXDLL
 )
 

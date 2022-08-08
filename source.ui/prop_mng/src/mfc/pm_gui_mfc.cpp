@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "framework.h"
-#include "pm_gui/pm_gui_mfc.h"
+#include "pm_gui/pm_gui.h"
 #include "PMPage.h"
 
 #ifdef _DEBUG
@@ -9,7 +9,7 @@
 
 //////////////////////////////////////////////////////////////////
 
-PMGUIMFC_API IPMPage* pm_gui_mfc_factory()
+PMGUI_API IPMPage* pm_gui_factory()
 {
     return new PMPage();
 }
