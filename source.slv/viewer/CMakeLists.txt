@@ -8,7 +8,7 @@ include_directories(src/include)    # private headers
 
 add_subdirectory(src/lib)
 #add_subdirectory(src/dll)
-#add_subdirectory(tests)
+add_subdirectory(src/tests)
 
 file(GLOB PUBLIC_HEADERS "include/vwr/*.h")
 file(GLOB DLL_SRC "src/dll/*.h" "src/dll/*.cpp")
