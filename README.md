@@ -16,6 +16,9 @@ source.ui/prop_man  <-  source.ui/efd_explorer.
 See include_cmn_libs.cmake
 source.basic/third_party_usage
 
+### Tests
+source.slv/viewer/src/tests
+
 ### Win res dll:
 source.ui/gui_res  <-  source.ui/efd_explorer.
 Use corresponding INTERFACE library to add resource.h folder.
@@ -35,9 +38,7 @@ TODO: use my pch.h
 
 ### C++20 modules
 TODO
-
-### C++20 header units
-TODO
+C++20 header units
 
 ### VS project/file grouping
 - set_property(GLOBAL PROPERTY USE_FOLDERS ON)
