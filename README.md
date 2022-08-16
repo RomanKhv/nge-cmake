@@ -31,7 +31,7 @@ TODO: custom configurations
 TODO: specific settings (defines, linked libs) for every configuration
 
 ### Delayload
-TODO
+efd_explorer (-> pm_gui_win/pm_gui_mfc)
 
 ### Custom PCH
 TODO: use my pch.h

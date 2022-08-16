@@ -19,12 +19,14 @@ target_link_libraries( ${PROJECT_NAME}
 
 if (USE_MFC)
 	target_link_libraries( ${PROJECT_NAME}
-	PRIVATE
-		pm_gui_mfc
-	)
+		PRIVATE
+			pm_gui_mfc
+		)
+	set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/DELAYLOAD:pm_gui_mfc.dll")
 else()
 	target_link_libraries( ${PROJECT_NAME}
-	PRIVATE
-		pm_gui_win
+		PRIVATE
+			pm_gui_win
 	)
+	set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "/DELAYLOAD:pm_gui_win.dll")
 endif()
