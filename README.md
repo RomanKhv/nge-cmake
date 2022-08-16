@@ -33,8 +33,11 @@ TODO: specific settings (defines, linked libs) for every configuration
 ### Delayload
 efd_explorer (-> pm_gui_win/pm_gui_mfc)
 
-### Custom PCH
-TODO: use my pch.h
+### Predefined PCH
+if(MSVC)
+    set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/Yupch.h")
+    set_source_files_properties("pch.cpp" PROPERTIES COMPILE_FLAGS "/Ycpch.h")
+endif()
 
 ### C++20 modules
 TODO
