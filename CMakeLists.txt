@@ -29,7 +29,7 @@ set(CMAKE_TESTS_OUTPUT_DIR ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/tests)
 include(include_cmn_libs)
 include(PrintTargetProperties)
 
-# enable_testing()
+enable_testing()
 list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
