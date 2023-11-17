@@ -1,7 +1,4 @@
-cmake_minimum_required (VERSION 3.20)
-
-set(PROJECT_NAME feature_gui)
-project(${PROJECT_NAME} CXX)
+project(feature_gui CXX)
 
 add_library(${PROJECT_NAME} 
 	SHARED 

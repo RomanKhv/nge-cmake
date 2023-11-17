@@ -1,8 +1,5 @@
 ﻿###   efd_solver   ###
-cmake_minimum_required (VERSION 3.20)
-
-set (PROJECT_NAME efd_solver)
-project ( ${PROJECT_NAME} CXX )
+project( efd_solver CXX )
 
 # Add source to this project's executable.
 add_executable ( ${PROJECT_NAME} "efd_solver.cpp" )

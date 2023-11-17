@@ -1,9 +1,6 @@
 ###   idl/src   ###
-cmake_minimum_required(VERSION 3.20)
 
-#set project(target) name
-set(PROJECT_NAME comapi)
-project(${PROJECT_NAME})
+project( comapi )
 
 set(IDLFILE Greeter.idl)
 

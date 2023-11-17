@@ -1,10 +1,5 @@
 ###   gui_res   ###
-cmake_minimum_required(VERSION 3.20)
-
-######################################################################
-
-set (PROJECT_NAME gui_res_headers)
-project ( ${PROJECT_NAME} CXX )
+project ( gui_res_headers CXX )
 
 add_library( ${PROJECT_NAME} INTERFACE
     "include/gui_resources.h"

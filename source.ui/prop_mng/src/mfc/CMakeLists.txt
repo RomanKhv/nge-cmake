@@ -1,9 +1,5 @@
 ###   pm_gui_mfc   ###
-cmake_minimum_required (VERSION 3.20)
-
-set (PROJECT_NAME pm_gui_mfc)
-
-project ( ${PROJECT_NAME} CXX )
+project ( pm_gui_mfc CXX )
 
 # Add source to this project's executable.
 add_library( ${PROJECT_NAME} SHARED

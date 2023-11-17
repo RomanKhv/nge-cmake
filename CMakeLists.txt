@@ -1,5 +1,5 @@
 ﻿###   root   ###
-cmake_minimum_required (VERSION 3.20)	# VS 16.11
+cmake_minimum_required (VERSION 3.24)
 
 # prevent in-source build
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
@@ -8,6 +8,8 @@ endif()
 
 # register custom cmake modules folder
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+include(PrintTargetProperties)
+include(ext)
 
 #################################################################
 
@@ -27,7 +29,6 @@ set(CMAKE_PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/pdb)
 set(CMAKE_TESTS_OUTPUT_DIR ${PROJECT_BINARY_DIR}/${_PLATFORM_DIR}/tests)
 
 include(include_cmn_libs)
-include(PrintTargetProperties)
 
 enable_testing()
 list(APPEND CMAKE_CTEST_ARGUMENTS "--output-on-failure")

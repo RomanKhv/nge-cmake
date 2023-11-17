@@ -1,8 +1,5 @@
 ###   idl/tests (EXCLUDE_FROM_ALL)   ###
-cmake_minimum_required(VERSION 3.20)
-
-set(PROJECT_NAME com_tests)
-project(${PROJECT_NAME})
+project( com_tests )
 
 add_executable(${PROJECT_NAME}
     EXCLUDE_FROM_ALL    # due to regsvr32 

@@ -1,8 +1,5 @@
 ﻿###   viewer   ###
-cmake_minimum_required (VERSION 3.20)
-
-set (PROJECT_NAME viewer)
-project ( ${PROJECT_NAME} CXX )
+project( viewer CXX )
 
 include_directories(src/include)    # private headers
 
@@ -10,15 +7,20 @@ add_subdirectory(src/lib)
 #add_subdirectory(src/dll)
 add_subdirectory(src/tests)
 
-file(GLOB PUBLIC_HEADERS "include/vwr/*.h")
-file(GLOB DLL_SRC "src/dll/*.h" "src/dll/*.cpp")
-add_library( ${PROJECT_NAME} SHARED 
-	${PUBLIC_HEADERS}
-	${DLL_SRC}
-)
+add_library( ${PROJECT_NAME} SHARED )
 
-# public interface for viewer DLL
-target_include_directories( ${PROJECT_NAME} PUBLIC "include" )
+#1 API definition approach
+target_public_api_( ${PROJECT_NAME} SUBDIR "include" )
+
+#2 API definition approach
+#target_public_api_( ${PROJECT_NAME} "include/vwr/vwr_module.h" )
+#target_include_directories( ${PROJECT_NAME} PUBLIC "include" )
+
+file(GLOB DLL_SRC "src/dll/*.h" "src/dll/*.cpp")
+target_sources( ${PROJECT_NAME}
+	PRIVATE 
+		${DLL_SRC}
+)
 
 target_link_libraries( ${PROJECT_NAME}
 	PRIVATE
